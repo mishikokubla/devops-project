@@ -35,3 +35,19 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t devops-fastapi .
+      - name: Run Docker container
+        run: |
+          docker run -d --name devops-fastapi-test -p 8000:8000 devops-fastapi
+
+      - name: Wait for app
+        run: |
+          sleep 5
+
+      - name: Health check
+        run: |
+          curl --fail http://localhost:8000/health
+
+      - name: Stop test container
+        if: always()
+        run: |
+          docker stop devops-fastapi-test
