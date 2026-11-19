@@ -7,7 +7,7 @@ def health_check():
         "service": "devops-project",
         "version": "1.1",
         "hostname": socket.gethostname(),
-	"environment": "development"
+        "environment": "development"
     }
 if __name__ == "__main__":
     print(health_check())
