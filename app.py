@@ -2,7 +2,7 @@ import socket
 
 def health_check():
     return {
-        "status": "ok",
+        "status": "healthy",
         "service": "devops-project",
         "version": "1.1",
         "hostname": socket.gethostname()
