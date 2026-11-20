@@ -5,7 +5,7 @@ class TestHealthCheck(unittest.TestCase):
 
     def test_status(self):
         result = health_check()
-        self.assertEqual(result["status"], "unhealthy")
+        self.assertEqual(result["status"], "healthy")
 
     def test_service(self):
         result = health_check()
